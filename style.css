@@ -352,7 +352,7 @@
     font-weight: var(--fw-500);
   }
   
-  .hero-title { margin-block: 12px 8px; }
+  .hero-title { margin-block: 3px 8px; }
   
   .hero-text { font-size: var(--fs-5); }
   
@@ -859,7 +859,7 @@
      */
   
     .hero-text {
-      max-width: 60ch;
+      max-width: 50ch;
       margin-inline: auto;
     }
   
