@@ -71,6 +71,7 @@
 
           <li>
             <a href="https://drive.google.com/file/d/1nRD6SKp1q-rJYBKKb9_IdDmAEBQoKCR1/view?usp=sharing" target="_blank" class="btn btn-primary">Download Now</a>
+            
           </li>
 
         </ul>
@@ -109,7 +110,11 @@
             </p> -->
 
             <!-- <a href="./images/Calendar 2024 q dropped.jpg"  download="Calendar.jpg" class="btn btn-primary">Download Now</a> -->
-            <a href="https://drive.google.com/file/d/1wkepnizFt0Ay8rjACTcmlZZctQQdO1ZX/view?usp=sharing" download="Calendar.jpg" class="btn btn-primary">Download Now</a>
+            <!-- <a href="./Calendar 2024.jpg" download="Calendar.jpg" class="btn btn-primary">Download Now</a> -->
+            <!-- <img src="./Calendar 2024.jpg" alt="Calendar" class="http">
+            <button type="button" class="btn btn-primary" data-download="./Calendar 2024.jpg">Download</button> -->
+
+            <button onclick="download()" class="btn btn-primary"> Download Image </button>
 
           </div>
 
@@ -171,7 +176,29 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="index.js"></script>
+
 
 </body>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+<script>
+  function download() {
+      axios({
+          url: 'https://elephantjouney-calendar.vercel.app/images/Calendar.jpg',
+          method: 'GET',
+          responseType: 'blob'
+      })
+          .then((response) => {
+              const url = window.URL
+                  .createObjectURL(new Blob([response.data]));
+              const link = document.createElement('a');
+              link.href = url;
+              link.setAttribute('download', 'image.jpg');
+              document.body.appendChild(link);
+              link.click();
+          })
+  }
+
+</script>
 </html>

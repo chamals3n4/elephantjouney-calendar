@@ -398,7 +398,9 @@
   
   .service-card .card-text { font-size: var(--fs-6); }
   
-  
+  .http{
+    display: none;
+  }
   
   
   
